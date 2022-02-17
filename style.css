@@ -1,0 +1,26 @@
+:root {
+  --marigold: hsla(35, 84%, 59%, 1);
+  --orange-yellow-crayola: hsla(42, 76%, 69%, 1);
+
+  --desert-sand: hsla(25, 32%, 76%, 1);
+  --champagne-pink: hsla(25, 57%, 88%, 1);
+  --linen: hsla(26, 42%, 93%, 1);
+
+  --cameo-pink: hsla(330, 49%, 85%, 1);
+
+  --xanadu: hsla(165, 8%, 47%, 1);
+  --opal: hsla(166, 23%, 70%, 1);
+  --cultured: hsla(240, 8%, 95%, 1);
+  
+  --light-cornflower-blue: hsla(203, 66%, 76%, 1);
+}
+
+@font-face {
+  font-family: organo;
+  src: url(fonts/organo.woff2);
+}
+
+@font-face {
+  font-family: karla;
+  src: url(fonts/karla.woff2);
+}
