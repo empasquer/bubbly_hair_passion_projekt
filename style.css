@@ -33,6 +33,13 @@
   color: var(--text-groen);
 }
 
+.show {
+  display: block;
+}
+
+.noshow {
+  display: none;
+}
 img {
   height: 100%;
   width: 100%;
@@ -160,8 +167,8 @@ header {
 
 .burger_menu a {
   text-decoration: none;
- color: var(--text-groen);
- font-size: 2vw;
+  color: var(--text-groen);
+  font-size: 2vw;
 }
 
 .showMenu {
@@ -185,6 +192,78 @@ h1 {
   font-size: 16vw;
   padding-left: 28%;
   padding-top: 1%;
+}
+h2 {
+  color: orange;
+  font-family: organo;
+  font-size: 5vw;
+}
+
+.valgt {
+  background-color: black;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  overflow: scroll;
+}
+
+#popup article {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  margin: 4rem auto;
+  border-radius: 15px 50px;
+  padding: 12px;
+  background-color: red;
+  border: white;
+  border-width: 8px;
+  border-style: solid;
+  cursor: default;
+  color: white;
+  padding: 20px;
+}
+
+#luk {
+  position: fixed;
+  padding: 1rem;
+  font-size: 1.7em;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+}
+
+#popup_opening {
+  background-color: var(--cultured);
+  z-index: 10;
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  height: 45vh;
+  width: 95vw;
+  border-radius: 50%;
+}
+
+#luk1 {
+  position: fixed;
+  top: 90vh;
+  left: 48vw;
+  font-size: 1.7em;
+  font-weight: bolder;
+  color: var(--text-groen);
+  cursor: pointer;
+}
+
+#h2_opening {
+  position: fixed;
+  top: 25vh;
+  left: 25vw;
 }
 
 @media (min-width: 600px) {
@@ -231,5 +310,11 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+  }
+
+  #popup_opening {
+    height: 95vh;
+    width: 95vw;
+    border-radius: 50%;
   }
 }

@@ -47,8 +47,54 @@
         <section id="splash"><h1>hair</h1></section>
         <section id="banner"><h2>Bubbles til dig</h2>
         <img src="" alt="banner1"><img src="" alt="banner2"><img src="" alt="banner3"></section>
+        <section id="produkter_section"><h2>Bubbly produkter</h2>
+        <div id="sortering_container">
+          <nav class="filter">
+          <button data-kategori="alle" class="valgt">Alt på menuen</button>
+          <button data-kategori="drikkevarer">Drikkevarer</button>
+          <button data-kategori="forretter">Forretter</button>
+          <button data-kategori="hovedretter">Hovedretter</button>
+          <button data-kategori="desserter">Desserter</button>
+          <button data-kategori="sideorders">Side orders</button>
+        </nav>
+        <section id="liste"></section>
+      </div>
+      <div id="produkter_container">
+      <template>
+        <article id="menu">
+          <h3 class="navn"></h3>
+          <img src="" alt=""/>
+          <p class="kortbeskrivelse"></p>
+          <p class="pris">Pris : </p>
+        </article>
+      </template>
+    </div>
+  </section>
+            <section id="popup">
+      <div id="luk">&#x2715</div>
+      <article>
+        <h3 class="navn"></h3>
+        <img src="" alt="">
+        <p><span class="langbeskrivelse"></span></p>
+        <p>Oprindelsesregion : <span class="oprindelsesregion"></span></p>
+        <p>Pris: <span class="pris"></span></p>
+      </article>
+    </section>
+            <section id="popup_opening">
+      <div id="luk1">&#x2715</div>
+      <article>
+        <h2 id="h2_opening">POPUP IRRITERRENDE</h2>
+        <img src="" alt="">
+      </article>
+    </section>
+    <footer></footer>
       </main>
     
     <script src="script.js"></script>
   </body>
 </html>
+
+ 
+
+    
+
