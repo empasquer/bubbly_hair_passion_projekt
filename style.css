@@ -31,6 +31,34 @@
   font-family: karla;
 }
 
+.fragt_bar {
+  height: fit-content;
+  width: 100%;
+  background-color: var(--xanadu);
+  font-size: 5pt;
+  display: flex;
+  place-content: center;
+  color: var(--cultured);
+  border: none;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+.info_bar {
+  height: fit-content;
+  width: 100%;
+  background-color: var(--cameo-pink);
+  font-size: 5pt;
+  display: flex;
+  place-content: center;
+  color: var(--xanadu);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: none;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
 button {
   border: none;
   border-radius: 20px;
@@ -44,50 +72,38 @@ button {
   width: 60%;
 }
 
-header {
-  display: flex;
-}
-
-#mobile_logo {
-  display: block;
-}
-
-#mobile_logo img {
-  display: block;
-  aspect-ratio: 185/210;
-  width: 50%;
-}
-
-#desk_logo {
-  display: none;
-  overflow: hidden;
-  pointer-events: none;
-  cursor: default;
-}
-
+#header_bar,
 #logo_container {
-  padding-top: 2%;
-  padding-left: 2%;
+  z-index: -1;
+  position: absolute;
+  top: 12px;
+  padding-top: 8%;
+  display: flex;
+  background-color: var(--cultured);
+}
+
+#logo {
+  width: 40%;
 }
 
 #burger_closed {
   background-image: url(ikoner/burger.svg);
   background-size: cover;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
 }
 
 #burger_opened {
   background-image: url(ikoner/krys.svg);
   background-size: cover;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   display: none;
 }
 
 #hamburger {
   position: fixed;
-  top: 2%;
+  top: 6%;
   right: 2%;
   z-index: 2;
 }
@@ -131,12 +147,8 @@ header {
 }
 
 @media (min-width: 600px) {
-  #mobile_logo {
-    display: none;
-  }
-
-  #desk_logo {
-    display: block;
+  #logo {
+    width: 100%;
   }
 
   #hamburger {
@@ -146,4 +158,13 @@ header {
   #burger_menu {
     transform: translateY(0);
   }
+
+  #logo_container {
+    width: 100%;
+  }
+
+  .info_bar, .fragt_bar {
+font-size: 15pt;
+  }
+
 }
