@@ -11,6 +11,7 @@
   --xanadu: hsla(165, 8%, 47%, 1);
   --opal: hsla(166, 23%, 70%, 1);
   --cultured: hsla(240, 8%, 95%, 1);
+  --text-groen: hsla(162, 14%, 36%, 1);
 
   --light-cornflower-blue: hsla(203, 66%, 76%, 1);
 }
@@ -29,6 +30,7 @@
   padding: 0;
   margin: 0;
   font-family: karla;
+  color: var(--text-groen);
 }
 
 img {
@@ -49,8 +51,8 @@ body {
 .fragt_bar {
   height: fit-content;
   width: 100%;
-  background-color: var(--xanadu);
-  font-size: 5pt;
+  background-color: var(--text-groen);
+  font-size: 2vw;
   display: flex;
   place-content: center;
   color: var(--cultured);
@@ -63,10 +65,10 @@ body {
   height: fit-content;
   width: 100%;
   background-color: var(--cameo-pink);
-  font-size: 5pt;
+  font-size: 2vw;
   display: flex;
   place-content: center;
-  color: var(--xanadu);
+  color: var(--text-groen);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: none;
@@ -138,15 +140,13 @@ header {
   right: 0;
   bottom: auto;
   z-index: 1;
-  background-color: var(--light-cornflower-blue);
+  background-color: var(--opal);
   color: white;
   list-style: none;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 2rem;
-  border-bottom-left-radius: 12%;
-  border-bottom-right-radius: 12%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
   gap: 20px;
 
   display: flex;
@@ -160,7 +160,8 @@ header {
 
 .burger_menu a {
   text-decoration: none;
-  color: var(--xanadu);
+ color: var(--text-groen);
+ font-size: 2vw;
 }
 
 .showMenu {
@@ -181,7 +182,7 @@ li {
 h1 {
   font-family: organo;
   color: var(--cultured);
-  font-size: 38pt;
+  font-size: 16vw;
   padding-left: 28%;
   padding-top: 1%;
 }
@@ -203,11 +204,6 @@ h1 {
     width: 100%;
   }
 
-  .info_bar,
-  .fragt_bar {
-    font-size: 15pt;
-  }
-
   #splash {
     height: 500px;
     display: grid;
@@ -219,5 +215,21 @@ h1 {
     font-size: 13vw;
     grid-row: 4;
     grid-column: 5;
+  }
+
+  #logo_container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .burger_menu {
+    padding: 0;
+    position: inherit;
+    display: block;
+    transform: translateY(0%);
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
