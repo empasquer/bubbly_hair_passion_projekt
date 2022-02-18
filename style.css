@@ -11,7 +11,7 @@
   --xanadu: hsla(165, 8%, 47%, 1);
   --opal: hsla(166, 23%, 70%, 1);
   --cultured: hsla(240, 8%, 95%, 1);
-  
+
   --light-cornflower-blue: hsla(203, 66%, 76%, 1);
 }
 
@@ -23,4 +23,127 @@
 @font-face {
   font-family: karla;
   src: url(fonts/karla.woff2);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: karla;
+}
+
+button {
+  border: none;
+  border-radius: 20px;
+  background-color: var(--cameo-pink);
+  border-style: solid;
+  border-width: 10px;
+  border-color: var(--cameo-pink);
+}
+
+.ikon {
+  width: 60%;
+}
+
+header {
+  display: flex;
+}
+
+#mobile_logo {
+  display: block;
+}
+
+#mobile_logo img {
+  display: block;
+  aspect-ratio: 185/210;
+  width: 50%;
+}
+
+#desk_logo {
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+  cursor: default;
+}
+
+#logo_container {
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+#burger_closed {
+  background-image: url(ikoner/burger.svg);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+#burger_opened {
+  background-image: url(ikoner/krys.svg);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  display: none;
+}
+
+#hamburger {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  z-index: 2;
+}
+
+.burger_menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 1;
+  background-color: var(--light-cornflower-blue);
+  color: white;
+  list-style: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  border-bottom-left-radius: 12%;
+  border-bottom-right-radius: 12%;
+  gap: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.burger_menu li {
+  display: flex;
+  justify-content: center;
+}
+
+.burger_menu a {
+  text-decoration: none;
+  color: var(--xanadu);
+}
+
+.showMenu {
+  transform: translateY(0%);
+}
+
+@media (min-width: 600px) {
+  #mobile_logo {
+    display: none;
+  }
+
+  #desk_logo {
+    display: block;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  #burger_menu {
+    transform: translateY(0);
+  }
 }
