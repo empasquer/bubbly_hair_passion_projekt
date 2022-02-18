@@ -31,6 +31,21 @@
   font-family: karla;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+}
+
+a {
+  background-color: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-rows: minmax(fit-content, 1fr);
+}
+
 .fragt_bar {
   height: fit-content;
   width: 100%;
@@ -72,39 +87,45 @@ button {
   width: 60%;
 }
 
+header {
+  background-color: var(--cultured);
+}
+
 #header_bar,
 #logo_container {
   z-index: -1;
-  position: absolute;
-  top: 12px;
-  padding-top: 8%;
   display: flex;
-  background-color: var(--cultured);
+  padding-bottom: 2%;
+}
+
+#logo_container {
+  display: flex;
 }
 
 #logo {
   width: 40%;
+  aspect-ratio: 45/13;
 }
 
 #burger_closed {
   background-image: url(ikoner/burger.svg);
   background-size: cover;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--cameo-pink);
 }
 
 #burger_opened {
   background-image: url(ikoner/krys.svg);
   background-size: cover;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   display: none;
+  background-color: var(--cameo-pink);
 }
 
 #hamburger {
-  position: fixed;
-  top: 6%;
-  right: 2%;
+  margin-top: 3%;
   z-index: 2;
 }
 
@@ -146,6 +167,25 @@ button {
   transform: translateY(0%);
 }
 
+li {
+  background-color: inherit;
+}
+
+#splash {
+  height: 280px;
+  background-image: url(pics/bubblysplash.jpg);
+  background-size: cover;
+  background-position: 25% 0%;
+}
+
+h1 {
+  font-family: organo;
+  color: var(--cultured);
+  font-size: 38pt;
+  padding-left: 28%;
+  padding-top: 1%;
+}
+
 @media (min-width: 600px) {
   #logo {
     width: 100%;
@@ -163,8 +203,21 @@ button {
     width: 100%;
   }
 
-  .info_bar, .fragt_bar {
-font-size: 15pt;
+  .info_bar,
+  .fragt_bar {
+    font-size: 15pt;
   }
 
+  #splash {
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-rows: 2fr 2fr;
+  }
+
+  h1 {
+    font-size: 13vw;
+    grid-row: 4;
+    grid-column: 5;
+  }
 }
