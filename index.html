@@ -45,29 +45,36 @@
       </nav></div></div></header>
       <main>
         <section id="splash"><h1>hair</h1></section>
-        <section id="banner"><h2>Bubbles til dig</h2>
-        <img src="pics/insp.png" alt="banner1"><img src="pics/medlem.png" alt="banner2"><img src="pics/tilbud.png" alt="banner3"></section>
+        <section>
+          <h2>Bubbles til dig</h2>
+          <div id="banner">
+        <a href="error.html"><img src="pics/insp.png" alt="banner1"></a>
+        <a href="error.html"><img src="pics/medlem.png" alt="banner2"></a>
+        <a href="error.html"><img src="pics/tilbud.png" alt="banner3"></a></div>
+      </section>
         <section id="produkter_section"><h2>Bubbly produkter</h2>
         <div id="sortering_container">
           <h3 id="kategorih3"></h3>
           <nav class="filter_desktop">
           <button data-kategori="alle" class="valgt">Alle Hårtyper</button>
-          <button data-kategori="drikkevarer">Farvet hår</button>
-          <button data-kategori="forretter">Fint hår</button>
+          <button data-kategori="Farvet">Farvet hår</button>
+          <button data-kategori="Fint">Fint hår</button>
           <button data-kategori="hovedretter">Tørt hår</button>
-          <button data-kategori="desserter">Krøllet hår</button>
-          <button data-kategori="sideorders">Normalt hår</button>
+          <button data-kategori="Krøllet">Krøllet hår</button>
+          <button data-kategori="Normalt">Normalt hår</button>
         </nav>
         <section id="liste"></section>
       </div>
       <div id="produkter_container">
 
       <template>
-        <article id="menu">
+        <article id="artikel">
+          <img class="image" src="" alt=""/>
+          <img src="ikoner/favorite.svg" alt="favorite">
           <h3 class="navn"></h3>
-          <img src="" alt=""/>
-          <p class="kortbeskrivelse"></p>
+          <p class="str"></p>
           <p class="pris">Pris : </p>
+          <button class="btn">Læg i kurv</button>
         </article>
       </template>
     </div>
