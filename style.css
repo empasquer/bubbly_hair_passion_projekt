@@ -83,7 +83,7 @@ body {
   padding-top: 1%;
 }
 
-button {
+.button {
   border: none;
   border-radius: 20px;
   background-color: var(--cameo-pink);
@@ -94,6 +94,8 @@ button {
 
 .ikon {
   width: 60%;
+  display: flex;
+  justify-self: center;
 }
 
 header {
@@ -122,6 +124,8 @@ header {
   width: 15px;
   height: 15px;
   background-color: var(--cameo-pink);
+  position: relative;
+  z-index: 50;
 }
 
 #burger_opened {
@@ -131,11 +135,15 @@ header {
   height: 15px;
   display: none;
   background-color: var(--cameo-pink);
+  position: relative;
+  z-index: 50;
 }
 
 #hamburger {
+  position: relative;
   margin-top: 3%;
-  z-index: 2;
+  z-index: 50;
+  margin-right: 1vw;
 }
 
 .burger_menu {
@@ -146,7 +154,7 @@ header {
   left: 0;
   right: 0;
   bottom: auto;
-  z-index: 1;
+  z-index: 50;
   background-color: var(--opal);
   color: white;
   list-style: none;
@@ -166,9 +174,11 @@ header {
 }
 
 .burger_menu a {
+  display: grid;
   text-decoration: none;
   color: var(--text-groen);
   font-size: 2vw;
+  align-content: center;
 }
 
 .showMenu {
@@ -193,10 +203,11 @@ h1 {
   padding-left: 28%;
   padding-top: 1%;
 }
+
 h2 {
   color: orange;
   font-family: organo;
-  font-size: 5vw;
+  font-size: 8vw;
 }
 
 .valgt {
@@ -252,18 +263,24 @@ h2 {
 
 #luk1 {
   position: fixed;
-  top: 90vh;
+  top: 40vh;
   left: 48vw;
   font-size: 1.7em;
   font-weight: bolder;
   color: var(--text-groen);
   cursor: pointer;
+  z-index: 100;
 }
 
 #h2_opening {
   position: fixed;
   top: 25vh;
   left: 25vw;
+}
+
+#banner h2 {
+  display: grid;
+  justify-content: center;
 }
 
 @media (min-width: 600px) {
@@ -296,6 +313,10 @@ h2 {
     grid-column: 5;
   }
 
+  h2 {
+    font-size: 5vw;
+  }
+
   #logo_container {
     justify-content: space-between;
     align-items: center;
@@ -316,5 +337,9 @@ h2 {
     height: 95vh;
     width: 95vw;
     border-radius: 50%;
+  }
+
+  #luk1 {
+    top: 90vh;
   }
 }
