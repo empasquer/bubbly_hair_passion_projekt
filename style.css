@@ -106,6 +106,17 @@ button:hover {
   background-color: var(--light-cornflower-blue);
 }
 
+.produkt {
+  color: var(--text-groen);
+  background-color: var(--orange-yellow-crayola);
+  box-shadow: 5px 5px 0px 0px var(--opal);
+}
+
+.produkt:hover {
+  background-color: var(--text-groen);
+  color: var(--cultured);
+}
+
 .ikon {
   width: 60%;
   display: flex;
@@ -323,10 +334,7 @@ h2 {
 .produkt_ikon {
   width: 300px;
 }
-.produkt_ikon:hover {
-  width: 300px;
-  transform: scale(1.1);
-}
+
 
 @media (min-width: 600px) {
   #logo {
@@ -399,4 +407,5 @@ h2 {
   #banner img {
     width: 1fr;
   }
+  
 }
