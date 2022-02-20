@@ -55,13 +55,14 @@
         <section id="produkter_section"><h2>Bubbly produkter</h2>
         <div id="sortering_container">
           <h3 id="kategorih3"></h3>
-          <nav class="filter_desktop">
+          <nav>
           <button data-kategori="alle" class="valgt">Alle Hårtyper</button>
           <button data-kategori="Farvet">Farvet hår</button>
           <button data-kategori="Fint">Fint hår</button>
-          <button data-kategori="hovedretter">Tørt hår</button>
+          <button data-kategori="Tørt">Tørt hår</button>
           <button data-kategori="Krøllet">Krøllet hår</button>
           <button data-kategori="Normalt">Normalt hår</button>
+  
         </nav>
         <section id="liste"></section>
       </div>
@@ -69,8 +70,8 @@
 
       <template>
         <article id="artikel">
-          <img class="image" src="" alt=""/>
-          <img src="ikoner/favorite.svg" alt="favorite">
+          <img class="image produkt_ikon" src="" alt=""/>
+          <div class="fave_ikon"></div>
           <h3 class="navn"></h3>
           <p class="str"></p>
           <p class="pris">Pris : </p>
@@ -79,7 +80,7 @@
       </template>
     </div>
   </section>
-            <section id="popup">
+            <!-- <section id="popup">
       <div id="luk">&#x2715</div>
       <article>
         <h3 class="navn"></h3>
@@ -88,7 +89,7 @@
         <p>Oprindelsesregion : <span class="oprindelsesregion"></span></p>
         <p>Pris: <span class="pris"></span></p>
       </article>
-    </section>
+    </section> -->
             <section id="popup_opening">
       <div id="luk1">&#x2715</div>
       <article>

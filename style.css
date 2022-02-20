@@ -91,12 +91,19 @@ body {
   border-color: var(--cameo-pink);
 }
 
-.btn {
+button {
+  padding: 10px;
   border: none;
   border-radius: 20px;
   color: var(--cultured);
   background-color: var(--cameo-pink);
-  box-shadow: 10px 10px 0px 0px var(--marigold);
+  box-shadow: 5px 5px 0px 0px var(--marigold);
+  margin: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: var(--light-cornflower-blue);
 }
 
 .ikon {
@@ -218,7 +225,11 @@ h2 {
 }
 
 .valgt {
-  background-color: black;
+  background-color: var(--text-groen);
+}
+
+.valgt:hover {
+  background-color: var(--text-groen);
 }
 
 #popup {
@@ -290,6 +301,32 @@ h2 {
   justify-content: center;
 }
 
+.fave_ikon {
+  width: 30px;
+  height: 30px;
+  background-image: url(ikoner/fave_empty.svg);
+  background-size: cover;
+  margin: 10px;
+}
+
+.fave_ikon:hover {
+  transform: scale(1.2);
+}
+
+.fave_ikon_clicked {
+  width: 30px;
+  height: 30px;
+  background-image: url(ikoner/favorite.svg);
+  background-size: cover;
+}
+
+.produkt_ikon {
+  width: 300px;
+}
+.produkt_ikon:hover {
+  width: 300px;
+  transform: scale(1.1);
+}
 
 @media (min-width: 600px) {
   #logo {

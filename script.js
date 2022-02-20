@@ -47,7 +47,7 @@ const luk1 = document.querySelector("#luk1");
 
 //alt info og data i const
 const url = "https://shampoobizz-80fc.restdb.io/rest/produkt";
-const key = "91a1a859ee65aa0922db45a35f046a0900eec";
+const key = "621205d334fd621565858848";
 const options = {
   headers: {
     "x-apikey": key,
@@ -77,6 +77,7 @@ function start() {
   luk1.addEventListener("click", lukOpeningPopup);
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
+
   //   kalder hentData her
   hentData();
 }
@@ -127,7 +128,7 @@ function visHairType() {
       //jeg kloner min template og vil gerne ændre dens conent
       const klon = temp.cloneNode(true).content;
       //her er det image content, source og alt (alt skal man bare ikke glemme, har mikkels stemme i mit hovedet lige nu)
-      klon.querySelector(".image").src = `/produkter/${type.billedenavn}.jpg`;
+      klon.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
       klon.querySelector(".image").alt = type.navn;
       //nåh altså ny titel og ny pris osv osv til alle de ting jeg vil se fra min database
       klon.querySelector(".navn").textContent = type.navn;
@@ -141,6 +142,14 @@ function visHairType() {
       container.appendChild(klon);
     }
   });
+
+  const fave = document.querySelector(".fave_ikon");
+
+  fave.addEventListener("click", faveClicked);
+
+  function faveClicked() {
+    fave.classList.toggle("fave_ikon_clicked");
+  }
 }
 
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på
