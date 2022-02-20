@@ -143,13 +143,18 @@ function visHairType() {
     }
   });
 
-  const fave = document.querySelector(".fave_ikon");
+  const fave = document.querySelectorAll(".fave_ikon");
 
-  fave.addEventListener("click", faveClicked);
+  fave.forEach((favorite) => favorite.addEventListener("click", faveClicked));
 
   function faveClicked() {
-    fave.classList.toggle("fave_ikon_clicked");
+    if (this.classList.contains("fave_ikon_clicked")) {
+      this.classList.remove("fave_ikon_clicked");
+    } else {
+      this.classList.add("fave_ikon_clicked");
+    }
   }
+
 }
 
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på

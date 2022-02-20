@@ -11,14 +11,14 @@
   <body>
     <header>
       <p class="fragt_bar">Fri fragt ved køb over 399,00 kr / Hurtig levering 1-2 hverdage</p>
-      <p class="info_bar">25% på udvalgte produkter samt en gave til alle klubmedlemmer | <a href="#"> Klik Her</a></p>
+      <p class="info_bar">25% på udvalgte produkter samt en gave til alle klubmedlemmer | <a href="error.html"> Klik Her</a></p>
       <div class="header_bar">
       <div id="logo_container">
          <a href="index.html"><img id="logo" src="ikoner/logo_sticker.svg" alt="desk_logo"/></a>
       
       <nav>
         <ul class="burger_menu">
-          <li><a href="">Nyheder</a></li>
+          <li><a href="#">Nyheder</a></li>
           <li><a href="#">Tilbud</a></li>
           <li><a href="#">Om os</a></li>
           <li><a href="#">Bliv medlem</a></li>
@@ -52,9 +52,12 @@
         <a href="error.html"><img src="pics/medlem.png" alt="banner2"></a>
         <a href="error.html"><img src="pics/tilbud.png" alt="banner3"></a></div>
       </section>
-        <section id="produkter_section"><h2>Bubbly produkter</h2>
-        <div id="sortering_container">
+        <section id="produkter_section">
+          <h2>Bubbly produkter</h2>
           <h3 id="kategorih3"></h3>
+
+        <div id="sortering_container">
+          <div id="nav_wrap">
           <nav>
           <button data-kategori="alle" class="valgt">Alle Hårtyper</button>
           <button data-kategori="Farvet">Farvet hår</button>
@@ -63,11 +66,11 @@
           <button data-kategori="Krøllet">Krøllet hår</button>
           <button data-kategori="Normalt">Normalt hår</button>
   
-        </nav>
-        <section id="liste"></section>
+        </nav></div><div>
+        <section id="liste"></section></div>
       </div>
-      <div id="produkter_container">
 
+      <div id="produkter_container">
       <template>
         <article id="artikel">
           <img class="image produkt_ikon" src="" alt=""/>
