@@ -252,8 +252,13 @@ h2 {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: transparent;
   overflow: scroll;
+}
+
+#popup button {
+  color: var(--cultured);
+  width: fit-content;
 }
 
 #popup article {
@@ -263,8 +268,8 @@ h2 {
   margin: 4rem auto;
   border-radius: 15px 50px;
   padding: 12px;
-  background-color: red;
-  border: white;
+  background-color: var(--cultured);
+  border: var(--text-groen);
   border-width: 8px;
   border-style: solid;
   cursor: default;
@@ -272,12 +277,17 @@ h2 {
   padding: 20px;
 }
 
+#popup img {
+  width: 100%;
+}
+
 #luk {
+  top: 60px;
   position: fixed;
   padding: 1rem;
   font-size: 1.7em;
   font-weight: bolder;
-  color: white;
+  color: var(--text-groen);
   cursor: pointer;
 }
 
@@ -338,6 +348,43 @@ h2 {
   width: 300px;
 }
 
+footer {
+  background-color: var(--text-groen);
+  color: var(--cultured);
+  display: grid;
+}
+
+span {
+  color: var(--cultured);
+}
+
+.adresse,
+.kontakt {
+  display: grid;
+}
+
+.facebook,
+.instagram {
+  width: 25px;
+  height: 25px;
+  background-color: var(--cultured);
+  border-radius: 5px;
+  margin: 5px;
+  grid-row: 2;
+}
+
+.so_me {
+  display: flex;
+}
+footer {
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  font-size: 3.5vw;
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
 @media (min-width: 600px) {
   #logo {
     width: 100%;
@@ -347,10 +394,18 @@ h2 {
     display: none;
   }
 
-  #burger_menu {
+  .burger_menu {
     transform: translateY(0);
   }
 
+  .burger_menu a {
+    font-size: 2vw;
+  }
+
+  footer {
+    font-size: 1.5vw;
+    justify-content: space-between;
+  }
   #logo_container {
     width: 100%;
   }
@@ -419,7 +474,7 @@ h2 {
     grid-template-columns: 1fr 4fr;
     margin: 1.5vw;
   }
-  
+
   #nav_wrap {
     width: 150px;
     display: flex;
@@ -483,5 +538,4 @@ h2 {
   h2 {
     padding-left: 2vw;
   }
-
 }

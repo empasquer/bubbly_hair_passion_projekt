@@ -136,7 +136,7 @@ function visHairType() {
       klon.querySelector(".pris").textContent += type.pris + " dkk";
       //jeg gør det sådan at hvis man clicker på moin artikel at der så kommer en pop up eller modal op
       klon
-        .querySelector("#artikel")
+        .querySelector("#artikel_image")
         .addEventListener("click", () => visDetaljer(type));
       //jeg sætter mit ny content fast til container, eller i altså
       container.appendChild(klon);
@@ -154,14 +154,18 @@ function visHairType() {
       this.classList.add("fave_ikon_clicked");
     }
   }
-
 }
 
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på
 
 function visDetaljer(type) {
-  console.log("tyoen er ", type);
-  //pop up er visible nu
+  console.log("typen: ", type);
   popup.style.display = "block";
-  //faire comme pour visHairType donc regarder html pour trouver dans quel ordre les textcontent viennent
+  popup.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
+  popup.querySelector(".image").alt = type.navn;
+  popup.querySelector(".navn").textContent = type.navn;
+  popup.querySelector(".str").textContent = `${type.str} mL`;
+  popup.querySelector(".pris").textContent = `${type.pris} dkk`;
 }
+
+luk.addEventListener("click", () => (popup.style.display = "none"));

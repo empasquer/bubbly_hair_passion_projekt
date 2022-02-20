@@ -20,7 +20,7 @@
         <ul class="burger_menu">
           <li><a href="#">Nyheder</a></li>
           <li><a href="#">Tilbud</a></li>
-          <li><a href="#">Om os</a></li>
+          <li><a href="omos.html">Om os</a></li>
           <li><a href="#">Bliv medlem</a></li>
           <li>
             <a href="#"
@@ -73,7 +73,7 @@
       <div id="produkter_container">
       <template>
         <article id="artikel">
-          <img class="image produkt_ikon" src="" alt=""/>
+          <img id="artikel_image"  class="image produkt_ikon" src="" alt=""/>
           <div class="fave_ikon"></div>
           <h3 class="navn"></h3>
           <p class="str"></p>
@@ -83,16 +83,17 @@
       </template>
     </div>
   </section>
-            <!-- <section id="popup">
+            <section id="popup">
       <div id="luk">&#x2715</div>
       <article>
-        <h3 class="navn"></h3>
-        <img src="" alt="">
-        <p><span class="langbeskrivelse"></span></p>
-        <p>Oprindelsesregion : <span class="oprindelsesregion"></span></p>
-        <p>Pris: <span class="pris"></span></p>
+            <img id="artikel_image" class="image produkt_ikon" src="" alt=""/>
+          <div class="fave_ikon"></div>
+          <h3 class="navn"></h3>
+          <p class="str"></p>
+          <p class="pris">Pris : </p>
+          <button class="produkt">Læg i kurv</button>
       </article>
-    </section> -->
+    </section>
             <section id="popup_opening">
       <div id="luk1">&#x2715</div>
       <article>
@@ -102,7 +103,19 @@
     </section>
     
       </main>
-    <footer></footer>
+    <footer>
+      <div class="adresse">
+        <span>Addresse</span>
+        <span>Bubbly AS Shampoo vej 2 2300 København S Denmark</span>
+        <span>CVR: 33776644302</span>
+      </div>
+      <div class="kontakt">
+        <span>Kontakt</span>
+        <span>Kundeservice: Tlf. 32 500 800</span><span> Mail : ordre@bubbly.dk</span><div class="so_me">
+          <a href="https://www.facebook.com/"><img class="facebook" src="ikoner/facebook.svg" alt="facebook"></a>
+          <a href="https://www.instagram.com/"><img class="instagram" src="ikoner/insta.svg" alt="instagram"></a></div>
+        </div>
+      </footer>
     <script src="script.js"></script>
   </body>
 </html>
