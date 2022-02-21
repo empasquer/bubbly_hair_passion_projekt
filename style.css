@@ -318,8 +318,8 @@ h2 {
 
 #luk1 {
   position: fixed;
-  top: 14%;
-  left: 48vw;
+  top: 2%;
+  left: 87%;
   font-size: 1.7em;
   font-weight: bolder;
   color: var(--text-groen);
@@ -450,12 +450,13 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
   }
-  /* 
+
   #popup_opening {
-    height: 90px;
-    width: 100px;
-    aspect-ratio: 2654/1770;
-  } */
+    width: fit-content;
+    max-width: 1400px;
+    position: fixed;
+    left: 20%;
+  }
 
   #popup_opening img {
     max-width: 80%;
@@ -464,7 +465,7 @@ footer {
 
   #luk1 {
     top: 3%;
-    left: 92%;
+    left: 78%;
   }
 
   #banner {
