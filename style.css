@@ -33,6 +33,9 @@
   color: var(--text-groen);
 }
 
+main {
+  background-color: var(--cultured);
+}
 .show {
   display: block;
 }
@@ -45,6 +48,14 @@ img {
   height: 100%;
   width: 100%;
   background-color: inherit;
+}
+
+.h2_wrapper {
+  display: grid;
+}
+
+.h2_wrapper h2 {
+  place-self: center;
 }
 
 a {
@@ -138,6 +149,8 @@ header {
 
 #logo_container {
   display: flex;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 #logo {
@@ -235,6 +248,7 @@ h2 {
   color: orange;
   font-family: organo;
   font-size: 8vw;
+  align-content: center;
 }
 
 .valgt {
@@ -299,7 +313,7 @@ h2 {
   left: 2%;
   height: 45vh;
   width: 95vw;
-  border-radius: 50%;
+  border-radius: 25px;
 }
 
 #luk1 {
@@ -317,11 +331,6 @@ h2 {
   position: fixed;
   top: 25vh;
   left: 25vw;
-}
-
-#banner h2 {
-  display: grid;
-  justify-content: center;
 }
 
 .fave_ikon {
@@ -387,7 +396,8 @@ footer {
 
 @media (min-width: 600px) {
   #logo {
-    width: 100%;
+    padding-top: 1vw;
+    width: 50%;
   }
 
   #hamburger {
@@ -399,15 +409,12 @@ footer {
   }
 
   .burger_menu a {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   footer {
     font-size: 1.5vw;
     justify-content: space-between;
-  }
-  #logo_container {
-    width: 100%;
   }
 
   #splash {
@@ -424,7 +431,8 @@ footer {
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 3vw;
+    padding: 1vw;
   }
 
   #logo_container {
@@ -446,7 +454,6 @@ footer {
   #popup_opening {
     height: 95vh;
     width: 95vw;
-    border-radius: 50%;
   }
 
   #luk1 {
@@ -535,7 +542,9 @@ footer {
   h3 {
     padding-left: 10px;
   }
-  h2 {
-    padding-left: 2vw;
+
+  .fragt_bar,
+  .info_bar {
+    font-size: 1vw;
   }
 }
