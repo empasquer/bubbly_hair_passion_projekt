@@ -450,10 +450,16 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
   }
-
+/* 
   #popup_opening {
-    height: 85%;
-    width: 95%;
+    height: 90px;
+    width: 100px;
+    aspect-ratio: 2654/1770;
+  } */
+
+  #popup_opening img {
+    width: 100%;
+    aspect-ratio: 2654/1770;
   }
 
   #luk1 {
