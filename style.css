@@ -450,7 +450,7 @@ footer {
     flex-direction: row;
     justify-content: flex-end;
   }
-/* 
+  /* 
   #popup_opening {
     height: 90px;
     width: 100px;
@@ -458,7 +458,7 @@ footer {
   } */
 
   #popup_opening img {
-    width: 100%;
+    max-width: 80%;
     aspect-ratio: 2654/1770;
   }
 
