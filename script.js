@@ -58,7 +58,7 @@ const options = {
 const btn = document.querySelectorAll("button");
 const container = document.querySelector("#liste");
 const temp = document.querySelector("template");
-const h3 = document.querySelector("#kategorih3");
+// const h3 = document.querySelector("#kategorih3");
 
 const popup = document.querySelector("#popup");
 const luk = document.querySelector("#luk");
@@ -98,7 +98,7 @@ function filterHairType() {
   //this er så den knap der er blevet trykket på og ikke dem alle
   this.classList.add("valgt");
   //jeg ændre h3 text content til at være det der står på den valgte knaå, fordi åbenbart er det ikke nok at have farver på knappen der er valgt, user is dumb, så vi giver extra info
-  h3.textContent = this.textContent;
+  // h3.textContent = this.textContent;
 
   //sender til vishairType som skal vise hair types
   visHairType();

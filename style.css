@@ -33,6 +33,9 @@
   color: var(--text-groen);
 }
 
+main {
+  background-color: var(--cultured);
+}
 .show {
   display: block;
 }
@@ -45,6 +48,15 @@ img {
   height: 100%;
   width: 100%;
   background-color: inherit;
+}
+
+.h2_wrapper {
+  display: grid;
+}
+
+.h2_wrapper h2 {
+  place-self: center;
+  padding-top: 5%;
 }
 
 a {
@@ -138,6 +150,8 @@ header {
 
 #logo_container {
   display: flex;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 #logo {
@@ -235,6 +249,7 @@ h2 {
   color: orange;
   font-family: organo;
   font-size: 8vw;
+  align-content: center;
 }
 
 .valgt {
@@ -292,20 +307,20 @@ h2 {
 }
 
 #popup_opening {
-  background-color: var(--cultured);
+  background-color: transparent;
   z-index: 110;
   position: fixed;
   top: 2%;
   left: 2%;
   height: 45vh;
   width: 95vw;
-  border-radius: 50%;
+  border-radius: 25px;
 }
 
 #luk1 {
   position: fixed;
-  top: 40vh;
-  left: 48vw;
+  top: 2%;
+  left: 87%;
   font-size: 1.7em;
   font-weight: bolder;
   color: var(--text-groen);
@@ -317,11 +332,6 @@ h2 {
   position: fixed;
   top: 25vh;
   left: 25vw;
-}
-
-#banner h2 {
-  display: grid;
-  justify-content: center;
 }
 
 .fave_ikon {
@@ -344,9 +354,9 @@ h2 {
   z-index: 100;
 }
 
-.produkt_ikon {
+/* .produkt_ikon {
   width: 300px;
-}
+} */
 
 footer {
   background-color: var(--text-groen);
@@ -380,14 +390,15 @@ footer {
   display: flex;
   padding: 20px;
   gap: 10px;
-  font-size: 3.5vw;
+  font-size: 0.8rem;
   padding-bottom: 60px;
   padding-top: 60px;
 }
 
 @media (min-width: 600px) {
   #logo {
-    width: 100%;
+    padding-top: 1vw;
+    width: 50%;
   }
 
   #hamburger {
@@ -399,15 +410,12 @@ footer {
   }
 
   .burger_menu a {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   footer {
-    font-size: 1.5vw;
+    font-size: 0.8rem;
     justify-content: space-between;
-  }
-  #logo_container {
-    width: 100%;
   }
 
   #splash {
@@ -424,7 +432,8 @@ footer {
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 3vw;
+    padding: 1vw;
   }
 
   #logo_container {
@@ -444,21 +453,28 @@ footer {
   }
 
   #popup_opening {
-    height: 95vh;
-    width: 95vw;
-    border-radius: 50%;
+    width: fit-content;
+    max-width: 1400px;
+    position: fixed;
+    left: 20%;
+  }
+
+  #popup_opening img {
+    max-width: 80%;
+    aspect-ratio: 2654/1770;
   }
 
   #luk1 {
-    top: 90vh;
+    top: 3%;
+    left: 80%;
   }
 
   #banner {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   #banner img {
@@ -472,10 +488,10 @@ footer {
   #sortering_container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    margin: 1.5vw;
   }
 
   #nav_wrap {
+    padding: 10%;
     width: 150px;
     display: flex;
     flex-direction: column;
@@ -487,18 +503,21 @@ footer {
 
   #liste {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     grid-gap: 10px;
+    padding-bottom: 15%;
   }
 
   #artikel {
+    min-width: 150px;
+    max-width: 250px;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto;
-    background-color: var(--linen);
     border-radius: 25px;
-    padding: 10px;
+    padding: 0;
+    padding-bottom: 15%;
   }
 
   .produkt_ikon {
@@ -515,7 +534,8 @@ footer {
 
   #artikel h3 {
     grid-row: 3;
-    font-size: 3vw;
+    font-size: 1.2rem;
+    padding: 0;
     font-family: organo;
   }
 
@@ -535,8 +555,10 @@ footer {
   h3 {
     padding-left: 10px;
   }
-  h2 {
-    padding-left: 2vw;
+
+  .fragt_bar,
+  .info_bar {
+    font-size: 1vw;
   }
 }
 
