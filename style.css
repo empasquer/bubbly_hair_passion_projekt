@@ -306,7 +306,7 @@ h2 {
 }
 
 #popup_opening {
-  background-color: var(--cultured);
+  background-color: transparent;
   z-index: 110;
   position: fixed;
   top: 2%;
@@ -318,7 +318,7 @@ h2 {
 
 #luk1 {
   position: fixed;
-  top: 40vh;
+  top: 14%;
   left: 48vw;
   font-size: 1.7em;
   font-weight: bolder;
@@ -457,7 +457,8 @@ footer {
   }
 
   #luk1 {
-    top: 90vh;
+    top: 3%;
+    left: 92%;
   }
 
   #banner {
