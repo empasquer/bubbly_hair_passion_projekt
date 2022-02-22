@@ -615,8 +615,8 @@ input {
     grid-template-columns: 1fr 1fr;
   }
 
-  #popup .bottom {
-  }
+  /* #popup .bottom {
+  } */
 
   #popup img:hover {
     transform: none;
@@ -646,7 +646,7 @@ input {
 
 /* ------- om oss ------- */
 
-.om-oss-h2 {
+#om-oss h2 {
   padding: 7px;
   padding-left: 15px;
   padding-right: 15px;
@@ -690,36 +690,29 @@ input {
   padding-left: 15px;
 }
 
-@media (min-width: 750px) {
-  #om-oss p {
-    padding: 7px;
-    padding-left: 250px;
-    padding-right: 250px;
+.kundeservice li {
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  #om-oss-overskrift {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 50px;
   }
 
   #om-oss li {
-    padding: 7px;
-    padding-left: 250px;
-    padding-right: 250px;
     list-style: none;
   }
 
-  .om-oss-h2 {
-    padding: 7px;
-    padding-left: 200px;
-    padding-right: 200px;
-  }
-
   #om-oss {
-    padding-bottom: 100px;
-  }
-
-  #om-oss-banner {
-    background-color: var(--opal);
-    padding: 60px;
-    text-align: center;
-    font-size: 25px;
-    height: 20px;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 50px;
   }
 
   #om-oss-banner {
@@ -733,22 +726,13 @@ input {
   #kontakt {
     display: grid;
     grid-column-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 50px;
+    padding-left: 150px;
+    padding-right: 100px;
+
     /* padding-top: 100px;
     padding-bottom: 50px; */
   }
-
-  /* #kontakt p {
-    padding: 10px;
-    padding-left: 250px;
-    padding-right: 250px;
-  }
-
-  #kontakt h3 {
-    padding: 7px;
-    padding-left: 200px;
-    padding-right: 200px;
-  } */
 }
