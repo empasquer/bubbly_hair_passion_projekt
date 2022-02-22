@@ -166,6 +166,8 @@ function visDetaljer(type) {
   popup.querySelector(".navn").textContent = type.navn;
   popup.querySelector(".str").textContent = `${type.str} mL`;
   popup.querySelector(".pris").textContent = `${type.pris} dkk`;
+  popup.querySelector(".desc").textContent = type.beskrivelse;
+  popup.querySelector(".indhold").textContent = type.indhold;
 }
 
 luk.addEventListener("click", () => (popup.style.display = "none"));
