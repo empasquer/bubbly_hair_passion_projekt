@@ -108,7 +108,7 @@ button {
   padding: 10px;
   border: none;
   border-radius: 20px;
-  color: var(--cultured);
+  color: var(--text-groen);
   background-color: var(--cameo-pink);
   box-shadow: 5px 5px 0px 0px var(--marigold);
   margin: 10px;
@@ -117,14 +117,9 @@ button {
 
 button:hover {
   transform: scale(1.1);
-  background-color: var(--light-cornflower-blue);
 }
 
-.produkt {
-  color: var(--text-groen);
-  background-color: var(--orange-yellow-crayola);
-  box-shadow: 5px 5px 0px 0px var(--opal);
-}
+
 
 .produkt:hover {
   background-color: var(--text-groen);
@@ -253,11 +248,9 @@ h2 {
 }
 
 .valgt {
-  background-color: var(--text-groen);
-}
-
-.valgt:hover {
-  background-color: var(--text-groen);
+  color: var(--text-groen);
+  background-color: var(--opal);
+  box-shadow: 5px 5px 0px 0px var(--text-groen);
 }
 
 #popup {
