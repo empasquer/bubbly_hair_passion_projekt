@@ -154,7 +154,9 @@ function visHairType() {
       //jeg kloner min template og vil gerne ændre dens conent
       const klon = temp.cloneNode(true).content;
       //her er det image content, source og alt (alt skal man bare ikke glemme, har mikkels stemme i mit hovedet lige nu)
-      klon.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
+      klon.querySelector(
+        ".image"
+      ).src = `http://emsportfolio.dk/kea/07_dynamisk/bubbly_hair_passion_projekt/produkter/${type.billedenavn}.png`;
       klon.querySelector(".image").alt = type.navn;
       //nåh altså ny titel og ny pris osv osv til alle de ting jeg vil se fra min database
       klon.querySelector(".navn").textContent = type.navn;
