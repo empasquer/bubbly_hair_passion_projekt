@@ -99,7 +99,7 @@ function filterNyhed() {
   if (checkbox.checked) {
     nyhedenValgt = true;
   } else {
-    nyhedenValgt = false;
+    nyhedenValgt = "alle";
   }
   visHairType();
 }
