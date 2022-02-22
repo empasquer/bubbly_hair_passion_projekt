@@ -11,6 +11,7 @@
   --xanadu: hsla(165, 8%, 47%, 1);
   --opal: hsla(166, 23%, 70%, 1);
   --cultured: hsla(240, 8%, 95%, 1);
+  --cultured-back: hsla(240, 10%, 90%, 1);
   --text-groen: hsla(162, 14%, 36%, 1);
 
   --light-cornflower-blue: hsla(203, 66%, 76%, 1);
@@ -509,8 +510,10 @@ footer {
     grid-template-columns: 3fr 2fr;
     grid-template-rows: auto;
     border-radius: 25px;
-    padding: 0;
+    padding: 10px;
     padding-bottom: 15%;
+
+    justify-self: center;
   }
 
   .produkt_ikon {
@@ -518,11 +521,15 @@ footer {
     grid-row: span 2;
     border-radius: 25px;
     background-color: transparent;
+    align-self: center;
+    justify-self: center;
   }
 
   .fave_ikon {
     grid-row: 0;
     z-index: 100;
+    align-self: center;
+    justify-self: left;
   }
 
   #artikel h3 {
@@ -530,19 +537,27 @@ footer {
     font-size: 1.2rem;
     padding: 0;
     font-family: organo;
+    align-self: center;
+    justify-self: center;
   }
 
   #artikel .str {
     grid-row: 3;
+    align-self: center;
+    justify-self: left;
   }
 
   #artikel .pris {
     grid-row: 4;
+    align-self: center;
+    justify-self: left;
   }
 
   #artikel button {
     grid-row: 5;
     width: fit-content;
+    align-self: center;
+    justify-self: left;
   }
 
   h3 {
