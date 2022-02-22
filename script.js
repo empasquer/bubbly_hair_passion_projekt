@@ -67,10 +67,12 @@ const luk = document.querySelector("#luk");
 
 let haartype = "alle";
 let produkter;
-let nyheden = "alle";
-let nyhederne;
+let nyhedenValgt = "alle";
+//let nyhederne;
 
 //the one that makes it start alt skal være loaded før der skal ske andet
+
+const checkbox = document.querySelector(".nyhed_check");
 
 window.addEventListener("DOMContentLoaded", start);
 
@@ -80,9 +82,7 @@ function start() {
   luk1.addEventListener("click", lukOpeningPopup);
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
-  document
-    .querySelector(".nyhed_check")
-    .addEventListener("change", filterHairType);
+  checkbox.addEventListener("change", filterNyhed);
 
   //   kalder hentData her
   hentData();
@@ -95,6 +95,14 @@ function lukOpeningPopup() {
 }
 
 //nu er vi ved filtrerHaitType
+function filterNyhed() {
+  if (checkbox.checked) {
+    nyhedenValgt = true;
+  } else {
+    nyhedenValgt = false;
+  }
+  visHairType();
+}
 
 function filterHairType() {
   // jeg ændrer min variabel filter til at den skal være en kategori (se html med dataset)
@@ -105,8 +113,9 @@ function filterHairType() {
   //this er så den knap der er blevet trykket på og ikke dem alle
   this.classList.add("valgt");
   //jeg ændre h3 text content til at være det der står på den valgte knaå, fordi åbenbart er det ikke nok at have farver på knappen der er valgt, user is dumb, så vi giver extra info
-  nyheden = this.dataset.nyhed;
-  console.log("nyheden er :" + nyheden);
+  //nyheden = this.dataset.nyhed;
+
+  // console.log("nyheden er :" + nyheden);
   //sender til vishairType som skal vise hair types
   visHairType();
 }
@@ -118,8 +127,7 @@ async function hentData() {
   produkter = await respons.json();
   console.log(produkter);
 
-  nyhederne = produkter.filter((produkt) => (produkt.nyhed = nyheden));
-  console.log("nyhederne er :" + nyhederne);
+  // nyhederne = produkter.filter((produkt) => (produkt.nyhed = nyheden));
   //der vil vi altsp gerne se vores hår typer, så vi sender den derover
   visHairType();
 }
@@ -135,14 +143,14 @@ function visHairType() {
 
   //looop view af mine typer
   produkter.forEach((type) => {
-    if
     console.log(type.nyhed);
     if (
-      (haartype == "alle" && type.nyhed == nyheden) ||
-      (haartype == type.kategori && type.nyhed == nyheden) ||
-      (haartype == "alle" && nyheden == "alle") ||
-      (haartype == type.kategori && nyheden == "alle")
+      (haartype == "alle" && type.nyhed == nyhedenValgt) ||
+      (haartype == type.kategori && type.nyhed == nyhedenValgt) ||
+      (haartype == "alle" && nyhedenValgt == "alle") ||
+      (haartype == type.kategori && nyhedenValgt == "alle")
     ) {
+      console.log("foreach kører");
       //jeg kloner min template og vil gerne ændre dens conent
       const klon = temp.cloneNode(true).content;
       //her er det image content, source og alt (alt skal man bare ikke glemme, har mikkels stemme i mit hovedet lige nu)
