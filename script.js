@@ -65,7 +65,10 @@ const luk = document.querySelector("#luk");
 
 // variabler her
 
-let filter = "alle";
+let haartype = "alle";
+let produkter;
+let nyheden = "alle";
+let nyhederne;
 
 //the one that makes it start alt skal være loaded før der skal ske andet
 
@@ -77,6 +80,9 @@ function start() {
   luk1.addEventListener("click", lukOpeningPopup);
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
+  document
+    .querySelector(".nyhed_check")
+    .addEventListener("change", filterHairType);
 
   //   kalder hentData her
   hentData();
@@ -92,14 +98,15 @@ function lukOpeningPopup() {
 
 function filterHairType() {
   // jeg ændrer min variabel filter til at den skal være en kategori (se html med dataset)
-  filter = this.dataset.kategori;
+  haartype = this.dataset.kategori;
+
   //der vil jeg gerne vise hvad for en knp der er blevet clicked på så jeg giver den en class med noget funky et eller andet
   document.querySelector(".valgt").classList.remove("valgt");
   //this er så den knap der er blevet trykket på og ikke dem alle
   this.classList.add("valgt");
   //jeg ændre h3 text content til at være det der står på den valgte knaå, fordi åbenbart er det ikke nok at have farver på knappen der er valgt, user is dumb, så vi giver extra info
-  // h3.textContent = this.textContent;
-
+  nyheden = this.dataset.nyhed;
+  console.log("nyheden er :" + nyheden);
   //sender til vishairType som skal vise hair types
   visHairType();
 }
@@ -108,7 +115,11 @@ function filterHairType() {
 async function hentData() {
   //jeg kigger tilbage på hvad mine const url og options var, så kan jeg se at jeg gerne vil "fetche" hvad de parameters indeholder, her er det json halløj, ved ikke om det hedder bare json eller json liste......
   const respons = await fetch(url, options);
-  typer = await respons.json();
+  produkter = await respons.json();
+  console.log(produkter);
+
+  nyhederne = produkter.filter((produkt) => (produkt.nyhed = nyheden));
+  console.log("nyhederne er :" + nyhederne);
   //der vil vi altsp gerne se vores hår typer, så vi sender den derover
   visHairType();
 }
@@ -118,13 +129,20 @@ function visHairType() {
   //her er der masser af console.log fordi jeg skulle lige bedre forstår the process, har måske slettet dem
   console.log(visHairType);
 
-  console.log("hairtypes", typer);
+  console.log("hairtypes", produkter);
   //vi siger at vores const container skal være tom
   container.textContent = "";
 
   //looop view af mine typer
-  typer.forEach((type) => {
-    if (filter == type.kategori || filter == "alle") {
+  produkter.forEach((type) => {
+    if
+    console.log(type.nyhed);
+    if (
+      (haartype == "alle" && type.nyhed == nyheden) ||
+      (haartype == type.kategori && type.nyhed == nyheden) ||
+      (haartype == "alle" && nyheden == "alle") ||
+      (haartype == type.kategori && nyheden == "alle")
+    ) {
       //jeg kloner min template og vil gerne ændre dens conent
       const klon = temp.cloneNode(true).content;
       //her er det image content, source og alt (alt skal man bare ikke glemme, har mikkels stemme i mit hovedet lige nu)

@@ -34,6 +34,10 @@
   color: var(--text-groen);
 }
 
+a:hover {
+  color: var(--cultured);
+}
+
 main {
   background-color: var(--cultured);
 }
@@ -555,6 +559,11 @@ input {
     background-color: transparent;
     align-self: center;
     justify-self: center;
+    cursor: pointer;
+  }
+
+  #popup .produkt_ikon {
+    cursor:default
   }
 
   .fave_ikon {
