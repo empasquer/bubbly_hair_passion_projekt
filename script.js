@@ -58,7 +58,7 @@ const options = {
 const btn = document.querySelectorAll("button");
 const container = document.querySelector("#liste");
 const temp = document.querySelector("template");
-// const h3 = document.querySelector("#kategorih3");
+const h3 = document.querySelector("#kategorih3");
 
 const popup = document.querySelector("#popup");
 const luk = document.querySelector("#luk");
@@ -82,6 +82,7 @@ function start() {
   luk1.addEventListener("click", lukOpeningPopup);
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
+
   checkbox.addEventListener("change", filterNyhed);
 
   //   kalder hentData her
@@ -115,6 +116,7 @@ function filterHairType() {
 
   //sender til vishairType som skal vise hair types
   visHairType();
+  h3.textContent = this.textContent;
 }
 
 //hentdata function, uden den ville der ikke være noget content jo
@@ -157,7 +159,7 @@ function visHairType() {
       klon.querySelector(".image").alt = type.navn;
       //nåh altså ny titel og ny pris osv osv til alle de ting jeg vil se fra min database
       klon.querySelector(".navn").textContent = type.navn;
-      klon.querySelector(".str").textContent = type.str + " mL";
+      klon.querySelector(".str").textContent = type.str + " ml";
       klon.querySelector(".pris").textContent += type.pris + " dkk";
       //jeg gør det sådan at hvis man clicker på moin artikel at der så kommer en pop up eller modal op
       klon

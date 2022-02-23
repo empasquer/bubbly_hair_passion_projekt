@@ -59,7 +59,7 @@ img {
   display: grid;
 }
 
-.h2_wrapper h2 {
+.h2_wrapper h2, .h2_wrapper h3 {
   place-self: center;
   padding-top: 5%;
 }
@@ -72,7 +72,7 @@ a {
   height: fit-content;
   width: 100%;
   background-color: var(--text-groen);
-  font-size: 2vw;
+  font-size: 0.5rem;
   display: flex;
   place-content: center;
   color: var(--cultured);
@@ -85,7 +85,7 @@ a {
   height: fit-content;
   width: 100%;
   background-color: var(--cameo-pink);
-  font-size: 2vw;
+  font-size: 0.5rem;
   display: flex;
   place-content: center;
   color: var(--text-groen);
@@ -212,7 +212,7 @@ header {
   display: grid;
   text-decoration: none;
   color: var(--text-groen);
-  font-size: 5vw;
+  font-size: 1rem;
   align-content: center;
 }
 
@@ -435,7 +435,7 @@ footer {
   }
 
   .burger_menu a {
-    font-size: 1.5vw;
+    font-size: 1rem;
   }
 
   footer {
@@ -525,6 +525,12 @@ footer {
   #nav_wrap button {
     width: 150px;
   }
+
+  #nav_wrap h3 {
+    padding-bottom: 20%;
+    padding-top: 40%;
+  }
+
 
   #liste {
     /* display: grid;
@@ -616,7 +622,7 @@ footer {
 
   .fragt_bar,
   .info_bar {
-    font-size: 1vw;
+    font-size: 0.8rem;
   }
 
   #popup {
@@ -654,9 +660,36 @@ footer {
     color: var(--marigold);
   }
 
-  input {
-    width: 40px;
+  
+
+
+  .sorter_btn {
+    background: none;
+  box-shadow: none;
+  padding: 0;
+  padding-bottom: 10%;
+  margin: 0;
+  text-align: left;
+  font-family: karla;
+  font-size: 1rem;
+
   }
+
+  .sorter_btn:hover {
+    transform: scale(1.1);
+  }
+
+  #kategorih3 {
+    font-family: karla;
+    font-size: 2.5rem;
+    padding-top: 0;
+    color: var(--marigold);
+  }
+
+  .bubbly_footer {
+    width: 60%;
+  }
+
 }
 
 /* ------- om oss ------- */
