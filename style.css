@@ -563,7 +563,7 @@ input {
   }
 
   #popup .produkt_ikon {
-    cursor:default
+    cursor: default;
   }
 
   .fave_ikon {
@@ -684,23 +684,46 @@ input {
   /* height: 20px; */
 }
 
-#kontakt {
+#kontakt-oss {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-#kontakt p {
+#kontakt-oss p {
   padding: 10px;
   padding-left: 15px;
 }
 
-#kontakt h3 {
+#kontakt-oss h3 {
   padding: 7px;
   padding-left: 15px;
+  color: var(--marigold);
 }
 
-.kundeservice li {
+.kunde-service li {
   list-style: none;
+  padding-left: 25px;
+}
+
+.kunde-service {
+  text-align: initial;
+}
+
+#kontakt-oss a:hover {
+  color: var(--marigold);
+}
+
+#om-oss-knapper {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  padding: 1px;
+}
+
+#om-oss-knapper img {
+  width: 21vh;
+  height: 21vh;
 }
 
 @media (min-width: 600px) {
@@ -712,16 +735,24 @@ input {
     padding: 50px;
   }
 
+  #om-oss-knapper {
+    display: grid;
+    grid-column-gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px;
+    padding: 1px;
+  }
+
   #om-oss li {
     list-style: none;
   }
 
   #om-oss {
     display: grid;
-    grid-column-gap: 10px;
+    grid-column-gap: 5px;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 50px;
+    gap: 10px;
+    padding: 30px;
   }
 
   #om-oss-banner {
@@ -732,10 +763,10 @@ input {
     height: 20px;
   }
 
-  #kontakt {
+  #kontakt-oss {
     display: grid;
     grid-column-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 50px;
     padding-left: 150px;
@@ -745,3 +776,11 @@ input {
     padding-bottom: 50px; */
   }
 }
+
+/* .om-oss-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 80% 100%;
+}
+ */
