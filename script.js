@@ -54,6 +54,10 @@ const options = {
   },
 };
 
+// const urlParams = new URLSearchParams(window.location.search);
+// const id = urlParams.get("id");
+// console.log({ id });
+
 //flere constanter for html elementer
 const btn = document.querySelectorAll("button");
 const container = document.querySelector("#liste");
@@ -68,7 +72,7 @@ const luk = document.querySelector("#luk");
 let haartype = "alle";
 let produkter;
 let nyhedenValgt = "alle";
-//let nyhederne;
+
 
 //the one that makes it start alt skal være loaded før der skal ske andet
 
@@ -76,10 +80,18 @@ const checkbox = document.querySelector(".nyhed_check");
 
 window.addEventListener("DOMContentLoaded", start);
 
+function showPopUpOpening() {
+  popup1.style.display = "block";
+  luk1.addEventListener("click", lukOpeningPopup);
+}
+
+setTimeout(showPopUpOpening, 3500);
+setTimeout(lukOpeningPopup, 120000);
+
 //start function
 function start() {
   //videre på opening popup, hvis man clicker på krydset så sender vi det vider til lukblabla function
-  luk1.addEventListener("click", lukOpeningPopup);
+  popup1.style.display = "none";
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
 
@@ -91,8 +103,9 @@ function start() {
 
 //ny gammel function, den bruges kun i starten
 function lukOpeningPopup() {
+  console.log("lukOpeningPopup");
   //luk functionen som lukker opening pop up'en
-  popup1.classList = "noshow";
+  popup1.style.display = "none";
 }
 
 //nu er vi ved filtrerHaitType
@@ -186,7 +199,6 @@ function visHairType() {
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på
 
 function visDetaljer(type) {
-  
   console.log("typen: ", type);
   popup.style.display = "block";
   popup.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
