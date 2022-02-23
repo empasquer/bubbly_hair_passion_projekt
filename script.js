@@ -112,10 +112,7 @@ function filterHairType() {
   document.querySelector(".valgt").classList.remove("valgt");
   //this er så den knap der er blevet trykket på og ikke dem alle
   this.classList.add("valgt");
-  //jeg ændre h3 text content til at være det der står på den valgte knaå, fordi åbenbart er det ikke nok at have farver på knappen der er valgt, user is dumb, så vi giver extra info
-  //nyheden = this.dataset.nyhed;
 
-  // console.log("nyheden er :" + nyheden);
   //sender til vishairType som skal vise hair types
   visHairType();
 }
@@ -187,6 +184,7 @@ function visHairType() {
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på
 
 function visDetaljer(type) {
+  
   console.log("typen: ", type);
   popup.style.display = "block";
   popup.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
