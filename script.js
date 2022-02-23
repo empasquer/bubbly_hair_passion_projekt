@@ -54,9 +54,6 @@ const options = {
   },
 };
 
-// const urlParams = new URLSearchParams(window.location.search);
-// const id = urlParams.get("id");
-// console.log({ id });
 
 //flere constanter for html elementer
 const btn = document.querySelectorAll("button");
@@ -177,11 +174,15 @@ function visHairType() {
       //jeg gør det sådan at hvis man clicker på moin artikel at der så kommer en pop up eller modal op
       klon
         .querySelector("#artikel_image")
-        .addEventListener("click", () => visDetaljer(type));
+        .addEventListener(
+          "click",
+          () => (location.href = `vis_detaljer.html?id=${type._id}`)
+        );
       //jeg sætter mit ny content fast til container, eller i altså
       container.appendChild(klon);
     }
   });
+
 
   const fave = document.querySelectorAll(".fave_ikon");
 
@@ -198,16 +199,16 @@ function visHairType() {
 
 //functionen som åbner modal/popup med info om alle mine produkter i forhold til hvad for et jeg har clicket på
 
-function visDetaljer(type) {
-  console.log("typen: ", type);
-  popup.style.display = "block";
-  popup.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
-  popup.querySelector(".image").alt = type.navn;
-  popup.querySelector(".navn").textContent = type.navn;
-  popup.querySelector(".str").textContent = `${type.str} mL`;
-  popup.querySelector(".pris").textContent = `${type.pris} dkk`;
-  popup.querySelector(".desc").textContent = type.beskrivelse;
-  popup.querySelector(".indhold").textContent = type.indhold;
-}
+// function visDetaljer(type) {
+//   console.log("typen: ", type);
+//   popup.style.display = "block";
+//   popup.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
+//   popup.querySelector(".image").alt = type.navn;
+//   popup.querySelector(".navn").textContent = type.navn;
+//   popup.querySelector(".str").textContent = `${type.str} mL`;
+//   popup.querySelector(".pris").textContent = `${type.pris} dkk`;
+//   popup.querySelector(".desc").textContent = type.beskrivelse;
+//   popup.querySelector(".indhold").textContent = type.indhold;
+// }
 
-luk.addEventListener("click", () => (popup.style.display = "none"));
+// luk.addEventListener("click", () => (popup.style.display = "none"));
