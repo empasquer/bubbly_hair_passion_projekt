@@ -230,6 +230,7 @@ li {
   background-image: url(pics/bubblysplash.jpg);
   background-size: cover;
   background-position: 25% 0%;
+  padding: 0;
 }
 
 h1 {
@@ -245,13 +246,18 @@ h2 {
   font-family: organo;
   font-size: 8vw;
   align-content: center;
+  padding-bottom: 5%;
 }
 
-.valgt {
-  color: var(--text-groen);
-  background-color: var(--opal);
-  box-shadow: 5px 5px 0px 0px var(--text-groen);
+h3 {
+  padding-left: 7%;
 }
+
+#artikel {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 
 #artikel:hover {
   border-style: solid;
@@ -324,7 +330,7 @@ h2 {
 }
 
 .popup_opening_img {
-  width: fit-content;
+  width: 100%;
   box-shadow: 10px 10px 0px 0px;
   color: hsl(338, 24%, 84%);
 }
@@ -427,7 +433,45 @@ footer {
   padding-bottom: 10px;
 }
 
+#kategorih3 {
+  color: var(--marigold);
+  font-size: 1.3rem;
+}
+
+#nav_wrap nav {
+  display: grid;
+}
+
+.sorter_btn {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  padding: 10%;
+  margin: 0;
+  font-family: karla;
+  font-size: 1rem;
+}
+
+.valgt {
+  /* color: var(--text-groen);
+  background-color: var(--opal);
+  box-shadow: 5px 5px 0px 0px var(--text-groen); */
+  color: var(--marigold);
+}
+
+.valgt:hover {
+  transform: none;
+}
+
+.nyhed_check {
+  margin: 10%;
+}
+
 @media (min-width: 600px) {
+  main {
+    padding: 0;
+  }
+
   #logo {
     padding-top: 1vw;
     width: 50%;
@@ -464,8 +508,8 @@ footer {
   }
 
   h2 {
-    font-size: 3vw;
-    padding: 1vw;
+    font-size: 2.2rem;
+    padding: 3vw;
   }
 
   #logo_container {
@@ -507,6 +551,8 @@ footer {
     gap: 1vw;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 10%;
+    padding-top: 10px;
   }
 
   #banner img {
@@ -690,6 +736,12 @@ footer {
 
   .bubbly_footer {
     width: 60%;
+  }
+
+  .popup_opening_img {
+    width: fit-content;
+    box-shadow: 10px 10px 0px 0px;
+    color: hsl(338, 24%, 84%);
   }
 }
 

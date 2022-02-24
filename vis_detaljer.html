@@ -7,20 +7,106 @@
     <title>Vis detaljer</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
-        article {
-    display: grid;
-    grid-template-columns: 4fr auto;
-    grid-template-rows: auto;
+article p {
+    padding-left: 10%;
+    padding-top: 20%;
     line-height: 30px;
+}
+
+article {
+    padding-bottom: 10%;
+}
+
+h3 {
+    padding-top: 10%;
+}
+
+    hr {
+        display: none;
+    }
+
+    .knapper {
+        display: flex;
+        gap: 15px;
+         padding-left: 10%;
+    }
+
+    .pris, .str, .fave_ikon {
+        padding: 0;
+        margin: 0;
+      
+    }
+
+    .fave_ikon {
+       margin: 10px;
+       margin-top: 4%;
+    }
+
+    
+        @media (min-width: 600px) {
+         
+            hr {
+                display: block;
+            }
+
+                article {
+            display: grid;
+            grid-template-columns: 1fr 0.1fr 1fr;
+            grid-template-rows: auto;
+            line-height: 30px;
+        }
+
+        article p {
+            margin: 0;
+            padding: 0;
+            padding-top: 3%;
+            display: flex;
+            flex-wrap: wrap;
+            width: 40ch;
+        }
+
+        #artikel_image {
+            width: 100%;
+            max-width: 100%;
+            grid-column: span 4;
+            cursor: default;
+            padding: none;
+        }
+
+        #artikel_image:hover {
+           transform: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .produkt {
+            display: grid;
+        }
+
+        #image_wrap {
+            min-width: 400px;
+            max-width: 600px;
+        }
+
+        #content_wrap {
+            width: fit-content;
+        }
+
+        .pris{
+            font-size: larger;
+            font-weight: bolder;
+            width: fit-content;
+        }
+
+        .str {
+            width: fit-content;
+        }
 
         }
-        p {
-            width: 70ch;
-        }
-        #artikel_image {
-            max-width: 40%;
-        }
+
+
     </style>
 </head>
 <body>
@@ -63,22 +149,21 @@
  
       <button>Tilbage</button>
       <article>
-        <div class="top">
-          <div>
-          <img id="artikel_image" class="image produkt_ikon" src="" alt=""/>
-         </div>
-          <div>
-          <h3 class="navn"></h3>
+    <div id="image_wrap">
+        <img id="artikel_image" class="image produkt_ikon" src="" alt=""/></div>
+        <div class="flex"><hr></div>
+        <div id="content_wrap">
+             <h3 class="navn"></h3>
           <p class="desc"></p>
+          <div class="knapper">
           <p class="str"></p>
-          <p class="pris">Pris : </p>
-          
-          <div class="ting">
+          <p class="pris">Pris : </p></div>
+   <div class="knapper">
           <button>Læg i kurv</button>
-            <div class="fave_ikon"></div></div></div>
-         </div>
-        
-         <div class="bottom"> <hr><h3>Indhold</h3><p class="indhold"></p></div>
+            <div class="fave_ikon"></div></div>
+            <h3>Indhold</h3>
+            <p class="indhold"></p>
+        </div>
        
       </article></main>
     <footer>
@@ -126,16 +211,29 @@
 
         function vis(){
             console.log("typen: ", type);
-            article.style.display = "block";
+            article.style.display = "grid";
             article.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
             article.querySelector(".image").alt = type.navn;
             article.querySelector(".navn").textContent = type.navn;
-            article.querySelector(".str").textContent = `${type.str} mL`;
+            article.querySelector(".str").textContent = `${type.str} ml`;
             article.querySelector(".pris").textContent = `${type.pris} dkk`;
             article.querySelector(".desc").textContent = type.beskrivelse;
             article.querySelector(".indhold").textContent = type.indhold;
         }
 hentData();
+
+const fave = document.querySelectorAll(".fave_ikon");
+
+  fave.forEach((favorite) => favorite.addEventListener("click", faveClicked));
+
+  function faveClicked() {
+    if (this.classList.contains("fave_ikon_clicked")) {
+      this.classList.remove("fave_ikon_clicked");
+    } else {
+      this.classList.add("fave_ikon_clicked");
+    }
+  }
+
 
         document.querySelector("button").addEventListener("click", ()=>{ history.back()});
     </script>
