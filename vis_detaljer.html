@@ -186,56 +186,70 @@ h3 {
 
     <script>
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get("id");
-  console.log({ id });
-  const article = document.querySelector("article");
-  let type;
+      // mine contanter
 
-   const url = `https://shampoobizz-80fc.restdb.io/rest/produkt/${id}`;
-        const key = "621205d334fd621565858848";
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    const article = document.querySelector("article");
 
-              async function hentData() {
-                  console.log("hentData");
-            const respons = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-apikey': key
-                }
-            });
-            type = await respons.json();
-            console.log({type});
-        vis();
+    // variabel
+    let type;
+
+    // samme url og key som i js filen for min json data
+    // jeg giver min url id'et på den produkt der er blevet clicked på
+    const url = `https://shampoobizz-80fc.restdb.io/rest/produkt/${id}`;
+    const key = "621205d334fd621565858848";
+
+
+
+    // henter data'en
+    async function hentData() {
+      const respons = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-apikey': key
         }
+      });
+      type = await respons.json();
 
-        function vis(){
-            console.log("typen: ", type);
-            article.style.display = "grid";
-            article.querySelector(".image").src = `/produkter/${type.billedenavn}.png`;
-            article.querySelector(".image").alt = type.navn;
-            article.querySelector(".navn").textContent = type.navn;
-            article.querySelector(".str").textContent = `${type.str} ml`;
-            article.querySelector(".pris").textContent = `${type.pris} dkk`;
-            article.querySelector(".desc").textContent = type.beskrivelse;
-            article.querySelector(".indhold").textContent = type.indhold;
-        }
-hentData();
-
-const fave = document.querySelectorAll(".fave_ikon");
-
-  fave.forEach((favorite) => favorite.addEventListener("click", faveClicked));
-
-  function faveClicked() {
-    if (this.classList.contains("fave_ikon_clicked")) {
-      this.classList.remove("fave_ikon_clicked");
-    } else {
-      this.classList.add("fave_ikon_clicked");
+      vis();
     }
-  }
+
+    function vis(){
+
+      // får min artikle til at være synlig
+      article.style.display = "grid";
+      // putter indhold i min artikel
+      article.querySelector(".image").src = `http://emsportfolio.dk/kea/07_dynamisk/bubbly_hair_passion_projekt/produkter/${type.billedenavn}.png`;
+      article.querySelector(".image").alt = type.navn;
+      article.querySelector(".navn").textContent = type.navn;
+      article.querySelector(".str").textContent = `${type.str} ml`;
+      article.querySelector(".pris").textContent = `${type.pris} dkk`;
+      article.querySelector(".desc").textContent = type.beskrivelse;
+      article.querySelector(".indhold").textContent = type.indhold;
+    }
+
+    hentData();
 
 
-        document.querySelector("button").addEventListener("click", ()=>{ history.back()});
+
+    // fave/ wishlist hjerte ikon clickbar se js filen fro kommentarene for den
+    const fave = document.querySelectorAll(".fave_ikon");
+
+    fave.forEach((favorite) => favorite.addEventListener("click", faveClicked));
+
+    function faveClicked() {
+      if (this.classList.contains("fave_ikon_clicked")) {
+        this.classList.remove("fave_ikon_clicked");
+      } else {
+        this.classList.add("fave_ikon_clicked");
+      }
+    }
+    
+    // når jge clicker på tilbage knappen skal jeg gå tilbage til den side jeg kom fra
+    document.querySelector("button").addEventListener("click", ()=>{ history.back()});
+    
     </script>
 </body>
 </html>
