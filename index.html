@@ -11,13 +11,14 @@
   <body>
     <header>
       <p class="fragt_bar">Fri fragt ved køb over 399,00 kr / Hurtig levering 1-2 hverdage</p>
-      <p class="info_bar">25% på udvalgte produkter samt en gave til alle klubmedlemmer | <a href="error.html"> Klik Her</a></p>
+      <p class="info_bar">25% på udvalgte produkter samt en gave til alle klubmedlemmer<a href="error.html"> | Klik Her</a></p>
       <div class="header_bar">
       <div id="logo_container">
          <a href="index.html"><img id="logo" src="ikoner/logo.svg" alt="desk_logo"/></a>
       
       <nav>
         <ul class="burger_menu">
+          <li><a href="index.html">Hjem</a></li>
           <li><a href="error.html">Nyheder</a></li>
           <li><a href="error.html">Tilbud</a></li>
           <li><a href="omos.html">Om os</a></li>
@@ -54,20 +55,22 @@
         <a href="error.html"><img src="pics/tilbud.png" alt="banner3"></a></div>
       </section>
         <section id="produkter_section">
-          <div class="h2_wrapper"><h2>Bubbly produkter</h2></div>
+          <div class="h2_wrapper"><h2>Bubbly produkter</h2><h3 id = "kategorih3" ></h3></div>
           
           <!-- <h3 id="kategorih3"></h3> -->
 
         <div id="sortering_container">
           <div id="nav_wrap">
           <nav>
-          <button data-kategori="alle" class="valgt">Alle Hårtyper</button>
-          <button data-kategori="Farvet">Farvet hår</button>
-          <button data-kategori="Fint">Fint hår</button>
-          <button data-kategori="Tørt">Tørt hår</button>
-          <button data-kategori="Krøllet">Krøllet hår</button>
-          <button data-kategori="Normalt">Normalt hår</button>
-          <input class="nyhed_check" type="checkbox" data-nyhed="nyhed">Nyheder</input>
+            <h3>Kategorier</h3>
+          <button data-kategori="alle" class="valgt sorter_btn">Alle hårtyper</button>
+          <button data-kategori="Farvet" class="sorter_btn">Farvet hår</button>
+          <button data-kategori="Fint" class="sorter_btn">Fint hår</button>
+          <button data-kategori="Tørt" class="sorter_btn">Tørt hår</button>
+          <button data-kategori="Krøllet" class="sorter_btn">Krøllet hår</button>
+          <button data-kategori="Normalt" class="sorter_btn">Normalt hår</button>
+          <h3>Nyhed check</h3>
+          <input class="nyhed_check sorter_btn" type="checkbox" data-nyhed="nyhed"> Nyheder</input>
   
         </nav></div><div>
         <section id="liste"></section></div>
@@ -79,8 +82,9 @@
           <img id="artikel_image"  class="image produkt_ikon" src="" alt=""/>
           <div class="fave_ikon"></div>
           <h3 class="navn"></h3>
-          <p class="str"></p>
-          <p class="pris">Pris : </p>
+          <div class="str_pris_container">
+         
+          <p class="pris">Pris : </p> <p class="str"></p></div>
           <button>Læg i kurv</button>
         </article>
       </template>
@@ -90,7 +94,7 @@
             <section id="popup_opening">
       <div id="luk1">X</div>
       <article>
-        <img src="pics/pop_up_opening.png" alt="medlem">
+        <img class="popup_opening_img" src="pics/pop_up_opening.png" alt="medlem">
       </article>
     </section>
     
@@ -101,6 +105,8 @@
         <span>Bubbly AS Shampoo vej 2 <br> 2300 København S Denmark</span>
         <span>CVR: 33776644302</span>
       </div>
+      <div>
+      <img class="bubbly_footer" src="ikoner/sticker.svg" alt="bubbly sticker"></div>
       <div class="kontakt">
         <span>Kontakt</span>
         <span>Kundeservice: Tlf. 32 500 800</span>

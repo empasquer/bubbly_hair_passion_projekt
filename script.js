@@ -54,11 +54,15 @@ const options = {
   },
 };
 
+// const urlParams = new URLSearchParams(window.location.search);
+// const id = urlParams.get("id");
+// console.log({ id });
+
 //flere constanter for html elementer
 const btn = document.querySelectorAll("button");
 const container = document.querySelector("#liste");
 const temp = document.querySelector("template");
-// const h3 = document.querySelector("#kategorih3");
+const h3 = document.querySelector("#kategorih3");
 
 const popup = document.querySelector("#popup");
 const luk = document.querySelector("#luk");
@@ -68,7 +72,7 @@ const luk = document.querySelector("#luk");
 let haartype = "alle";
 let produkter;
 let nyhedenValgt = "alle";
-//let nyhederne;
+
 
 //the one that makes it start alt skal være loaded før der skal ske andet
 
@@ -76,12 +80,21 @@ const checkbox = document.querySelector(".nyhed_check");
 
 window.addEventListener("DOMContentLoaded", start);
 
+function showPopUpOpening() {
+  popup1.style.display = "block";
+  luk1.addEventListener("click", lukOpeningPopup);
+}
+
+setTimeout(showPopUpOpening, 3500);
+setTimeout(lukOpeningPopup, 120000);
+
 //start function
 function start() {
   //videre på opening popup, hvis man clicker på krydset så sender vi det vider til lukblabla function
-  luk1.addEventListener("click", lukOpeningPopup);
+  popup1.style.display = "none";
   //der siger vi at alle knapper skal have click event for at kunne sorter ting, vi sender til filtrerHairType
   btn.forEach((knap) => knap.addEventListener("click", filterHairType));
+
   checkbox.addEventListener("change", filterNyhed);
 
   //   kalder hentData her
@@ -90,8 +103,9 @@ function start() {
 
 //ny gammel function, den bruges kun i starten
 function lukOpeningPopup() {
+  console.log("lukOpeningPopup");
   //luk functionen som lukker opening pop up'en
-  popup1.classList = "noshow";
+  popup1.style.display = "none";
 }
 
 //nu er vi ved filtrerHaitType
@@ -112,12 +126,10 @@ function filterHairType() {
   document.querySelector(".valgt").classList.remove("valgt");
   //this er så den knap der er blevet trykket på og ikke dem alle
   this.classList.add("valgt");
-  //jeg ændre h3 text content til at være det der står på den valgte knaå, fordi åbenbart er det ikke nok at have farver på knappen der er valgt, user is dumb, så vi giver extra info
-  //nyheden = this.dataset.nyhed;
 
-  // console.log("nyheden er :" + nyheden);
   //sender til vishairType som skal vise hair types
   visHairType();
+  h3.textContent = this.textContent;
 }
 
 //hentdata function, uden den ville der ikke være noget content jo
@@ -160,7 +172,7 @@ function visHairType() {
       klon.querySelector(".image").alt = type.navn;
       //nåh altså ny titel og ny pris osv osv til alle de ting jeg vil se fra min database
       klon.querySelector(".navn").textContent = type.navn;
-      klon.querySelector(".str").textContent = type.str + " mL";
+      klon.querySelector(".str").textContent = type.str + " ml";
       klon.querySelector(".pris").textContent += type.pris + " dkk";
       //jeg gør det sådan at hvis man clicker på moin artikel at der så kommer en pop up eller modal op
       klon
